@@ -1,0 +1,3 @@
+[submodule "esp32/build/esp-idf"]
+	path = esp32/build/esp-idf
+	url = https://github.com/espressif/esp-idf.git
