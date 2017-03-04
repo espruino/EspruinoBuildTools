@@ -13,9 +13,19 @@ source ./Espruino/scripts/provision-framework.sh ESP32
 #cd Espruino
 #make clean && make
 export IDF_PATH=$ESP_IDF_PATH
+# initialise the submodule folder
+# This will need to be tied to a release
+git submodule update --init
 cd esp-idf
+git checkout v2.0-rc1
 git submodule update --init
 cd ../app
+make clean
 make -j 5
-build/espruino-esp32.bin
-make build.tar
+# This is not the firmware - get rid of it!
+rm build/espruino-esp32.bin
+make app.tgz
+cd ../Espruino
+make clean
+make
+echo flashing instructions here...
