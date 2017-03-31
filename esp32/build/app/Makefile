@@ -25,5 +25,7 @@ app.tgz:
 	tar cfz ../../deploy/app.tgz `find ../app/build/ -name *.a` `find ../app/build/ -name sdkconfig.h` \
 		`find ../app/build/ -name *.ld` `find ../app/build/ -name partitions*.bin` \
 		`find ../app/build/bootloader -name bootloader.bin`
-
+	cd ../Espruino/
+	tar xfz ../../deploy/esp-idf.tgz
+	tar xfz ../../deploy/app.tgz
 
