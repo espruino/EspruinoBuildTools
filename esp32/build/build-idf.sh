@@ -8,10 +8,9 @@ if ! type xtensa-esp32-elf-gcc > /dev/null; then
            export PATH=$PATH:`pwd`/xtensa-esp32-elf/bin/
        fi
 fi
-
+cd Espruino
 source ./Espruino/scripts/provision-framework.sh ESP32
-#cd Espruino
-#make clean && make
+cd ..
 export IDF_PATH=$ESP_IDF_PATH
 # initialise the submodule folder
 # This will need to be tied to a release
