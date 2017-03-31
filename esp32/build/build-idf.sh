@@ -9,7 +9,7 @@ if ! type xtensa-esp32-elf-gcc > /dev/null; then
        fi
 fi
 cd Espruino
-source ./Espruino/scripts/provision.sh ESP32
+source ./scripts/provision.sh ESP32
 cd ..
 export IDF_PATH=$ESP_IDF_PATH
 # initialise the submodule folder
