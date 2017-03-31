@@ -32,6 +32,8 @@ cd ../Espruino
 # copy newly build libs and expand
 tar xfz ../../deploy/esp-idf.tgz
 tar xfz ../../deploy/app.tgz
+# reset the IDF_PATH
+source ./scripts/provision.sh ESP32
 make clean
 BOARD=ESP32 make
 echo flashing instructions here...
