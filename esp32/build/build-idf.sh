@@ -18,13 +18,20 @@ git submodule update --init
 cd esp-idf
 git checkout v2.0-rc2
 git submodule update --init
-cd ../app
+cd ..
+# adjust paths to this folder versions
+export ESP_IDF_PATH=`pwd`/esp-idf
+export ESP_APP_TEMPLATE_PATH=`pwd`
+cd app
 make clean
 make -j 5
 # This is not the firmware - get rid of it!
 rm build/espruino-esp32.bin
 make app.tgz
 cd ../Espruino
+# copy newly build libs and expand
+tar xfz ../../deploy/esp-idf.tgz
+tar xfz ../../deploy/app.tgz
 make clean
-BOARD=esp32 make
+BOARD=ESP32 make
 echo flashing instructions here...
