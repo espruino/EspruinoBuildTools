@@ -27,5 +27,5 @@ rm build/espruino-esp32.bin
 make app.tgz
 cd ../Espruino
 make clean
-make
+BOARD=esp32 make
 echo flashing instructions here...
