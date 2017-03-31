@@ -1,0 +1,10 @@
+#Name,      Type, SubType, Offset,    Size, Flags
+#boot,      data, ,        0x1000,    4K
+partition,  data, ,        0x8000,    0x1000
+nvs,        data, nvs,     0x9000,    16K,
+otadata,    data, ota,     0xd000,    8K,
+phy_init,   data, phy,     0xf000,    4K,
+ota_0,      app,  ota_0,   0x10000,   960K,
+js_code,    data, ,        0x100000,  64K,
+ota_1,      app,  ota_1,   0x200000,  960K,
+storage,    data, ,        0x300000,  1M,
