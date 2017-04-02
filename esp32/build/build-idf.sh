@@ -16,7 +16,7 @@ export IDF_PATH=$ESP_IDF_PATH
 # This will need to be tied to a release
 git submodule update --init
 cd esp-idf
-git checkout v2.0-rc1
+git checkout v2.0-rc2
 git submodule update --init
 cd ..
 # adjust paths to this folder versions
@@ -36,4 +36,4 @@ tar xfz ../../deploy/app.tgz
 source ./scripts/provision.sh ESP32
 make clean
 BOARD=ESP32 make
-echo flashing instructions here...
+cat targets/esp32/README_flash.txt
