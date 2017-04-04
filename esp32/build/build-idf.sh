@@ -16,6 +16,7 @@ export IDF_PATH=$ESP_IDF_PATH
 # This will need to be tied to a release
 git submodule update --init
 cd esp-idf
+git fetch
 git checkout v2.0-rc2
 git submodule update --init
 cd ..
@@ -32,6 +33,7 @@ cd ../Espruino
 # copy newly build libs and expand
 tar xfz ../../deploy/esp-idf.tgz
 tar xfz ../../deploy/app.tgz
+git fetch
 # reset the IDF_PATH
 source ./scripts/provision.sh ESP32
 make clean
