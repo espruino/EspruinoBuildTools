@@ -1,3 +1,8 @@
+#!/bin/bash
+esp_idf_branch=${1:-v2.0}
+espruino_branch=${2:-master}
+echo using esp-idf branch $esp_idf_branch, espruino branch $espruino_branch
+
 if [ ! -d "Espruino" ]; then
 git clone https://github.com/espruino/Espruino.git
 fi
@@ -17,7 +22,7 @@ export IDF_PATH=$ESP_IDF_PATH
 git submodule update --init
 cd esp-idf
 git fetch
-git checkout v2.0
+git checkout $esp_idf_branch
 git submodule update --init
 cd ..
 # adjust paths to this folder versions
@@ -34,6 +39,8 @@ cd ../Espruino
 tar xfz ../../deploy/esp-idf.tgz
 tar xfz ../../deploy/app.tgz
 git fetch
+git checkout $espruino_branch
+git pull
 # reset the IDF_PATH
 source ./scripts/provision.sh ESP32
 make clean
