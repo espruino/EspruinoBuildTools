@@ -45,4 +45,6 @@ git pull
 source ./scripts/provision.sh ESP32
 make clean
 BOARD=ESP32 make
+ln -s app/build/bootloader/bootloader.bin
+ln -s app/build/partitions_espruino.bin
 cat targets/esp32/README_flash.txt
