@@ -1,5 +1,6 @@
-#!/bin/bash
-esp_idf_branch=${1:-v2.0}
+l#!/bin/bash
+#esp_idf_branch=${1:-v2.0}
+esp_idf_branch=${1:-v2.1}
 espruino_branch=${2:-master}
 echo using esp-idf branch $esp_idf_branch, espruino branch $espruino_branch
 
