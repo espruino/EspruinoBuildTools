@@ -1,7 +1,9 @@
-l#!/bin/bash
+#!/bin/bash
 #esp_idf_branch=${1:-v2.0}
-esp_idf_branch=${1:-v2.1}
-espruino_branch=${2:-master}
+#esp_idf_branch=${1:-v2.1}
+#espruino_branch=${2:-master}
+esp_idf_branch=${1:-v3.0}
+espruino_branch=${2:-ESP32-v3.0}
 echo using esp-idf branch $esp_idf_branch, espruino branch $espruino_branch
 
 if [ ! -d "Espruino" ]; then
@@ -36,9 +38,11 @@ make -j 5
 rm build/espruino-esp32.bin
 make app.tgz
 cd ../Espruino
+
 # copy newly build libs and expand
 tar xfz ../../deploy/esp-idf.tgz
 tar xfz ../../deploy/app.tgz
+
 git fetch
 git checkout $espruino_branch
 git pull
