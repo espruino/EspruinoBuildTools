@@ -2,8 +2,8 @@
 #boot,      data, ,        0x1000,    4K
 partition,  data, ,        0x8000,    0x1000
 nvs,        data, nvs,     0x9000,    16K,
-otadata,    data, ota,     0xd000,    8K,
+#otadata,    data, ota,     0xd000,    8K,
 factory,    app,  factory, 0x10000,   960K,
 js_code,    data, ,        0x100000,  64K,
-ota_0,      app,  ota_0,   0x200000,  960K,
+#ota_0,      app,  ota_0,   0x200000,  960K,
 storage,    data, ,        0x300000,  1M,
