@@ -22,7 +22,7 @@ app.tgz:
 		`find ../esp-idf/components/ -name *.a` \
 		`find ../esp-idf/components/ -name *.ld` \
 		`find ../esp-idf/components/esptool_py/esptool/esptool.py`
-	tar cfz ../../deploy/app.tgz `find ./app/build/ -name *.a` `find ../app/build/ -name sdkconfig.h` \
+	tar cfz ../../deploy/app.tgz `find app/build -name *.a` `find ../app/build/ -name sdkconfig.h` \
 		`find ../app/build/ -name *.ld` `find ../app/build/ -name partitions*.bin` \
 		`find ../app/build/ -name bootloader.bin`
 	cd ../Espruino/
