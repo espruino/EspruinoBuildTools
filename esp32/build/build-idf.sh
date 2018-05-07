@@ -29,7 +29,7 @@ git submodule update --init
 cd ..
 # adjust paths to this folder versions
 export ESP_IDF_PATH=`pwd`/esp-idf
-export ESP_IDF_PATH=`pwd`/esp-idf
+export IDF_PATH=`pwd`/esp-idf
 export ESP_APP_TEMPLATE_PATH=`pwd`
 cd app
 make clean
