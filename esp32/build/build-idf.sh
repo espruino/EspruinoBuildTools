@@ -4,7 +4,7 @@
 #espruino_branch=${2:-master}
 #esp_idf_branch=${1:-v3.0}
 #espruino_branch=${2:-ESP32-v3.0}
-esp_idf_branch=${1:-v3.0.1}
+esp_idf_branch=${1:-v3.0.3}
 espruino_branch=${2:-master}
 echo using esp-idf branch $esp_idf_branch, espruino branch $espruino_branch
 
