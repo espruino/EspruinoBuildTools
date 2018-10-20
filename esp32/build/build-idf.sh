@@ -4,8 +4,9 @@
 #espruino_branch=${2:-master}
 #esp_idf_branch=${1:-v3.0}
 #espruino_branch=${2:-ESP32-v3.0}
-esp_idf_branch=${1:-v3.0.3}
-espruino_branch=${2:-master}
+esp_idf_branch=${1:-v3.1}
+#espruino_branch=${2:-master}
+espruino_branch=${2:-ESP32-V3.1}
 echo using esp-idf branch $esp_idf_branch, espruino branch $espruino_branch
 
 if [ ! -d "Espruino" ]; then
@@ -23,7 +24,7 @@ source ./scripts/provision.sh ESP32
 cd ..
 # initialise the submodule folder
 # This will need to be tied to a release
-git submodule update --init 
+#git submodule update --init 
 cd esp-idf
 git fetch
 git checkout $esp_idf_branch
