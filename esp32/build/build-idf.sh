@@ -25,9 +25,13 @@ cd ..
 # initialise the submodule folder
 # This will need to be tied to a release
 #git submodule update --init 
-cd esp-idf
-git fetch
-git checkout $esp_idf_branch
+
+
+#cd esp-idf
+#git fetch
+#git checkout $esp_idf_branch
+rm -r esp-idf
+git clone -b $esp_idf_branch --recursive https://github.com/espressif/esp-idf.git esp-idf
 git submodule update --init --recursive
 cd ..
 # adjust paths to this folder versions
@@ -36,7 +40,8 @@ export IDF_PATH=`pwd`/esp-idf
 export ESP_APP_TEMPLATE_PATH=`pwd`
 cd app
 make clean
-make -j 5
+make
+#make -j 5
 # This is not the firmware - get rid of it!
 rm build/espruino-esp32.bin
 make app.tgz
