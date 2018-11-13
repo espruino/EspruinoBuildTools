@@ -18,6 +18,7 @@ IDF_PATH=$(ESP_IDF_PATH)
 include $(ESP_IDF_PATH)/make/project.mk
 
 app.tgz:
+	echo `pwd`
 	tar cfz ../../deploy/esp-idf.tgz  `find ../esp-idf/components/ -name *.h` \
 		`find ../esp-idf/components/ -name *.a` \
 		`find ../esp-idf/components/ -name *.ld` \

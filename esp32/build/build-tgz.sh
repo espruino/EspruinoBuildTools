@@ -12,7 +12,6 @@ cd ../Espruino
 tar xfz ../../deploy/esp-idf.tgz
 tar xfz ../../deploy/app.tgz
 
-return
 git fetch
 git checkout $espruino_branch
 git pull

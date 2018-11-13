@@ -48,8 +48,8 @@ export IDF_PATH=`pwd`/esp-idf
 export ESP_APP_TEMPLATE_PATH=`pwd`
 cd app
 make clean
-#make
-make -j 5
+make
+#make -j 5
 # This is not the firmware - get rid of it!
 rm build/espruino-esp32.elf
 echo `pwd`
