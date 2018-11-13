@@ -1,7 +1,7 @@
 #Name,Type,SubType,Offset,Size
 #boot,data,0,0x1000,4K
 #reserved,0,0,0x2000,24K
-partition,data,0,0x8000,4K
+#partition,data,0,0x8000,4K
 nvs,data,nvs,0x9000,12K
 otadata,data,ota,0xC000,8K
 free,data,0x40,0xE000,8K
