@@ -4,12 +4,12 @@
 #espruino_branch=${2:-master}
 #esp_idf_branch=${1:-v3.0}
 #espruino_branch=${2:-ESP32-v3.0}
-esp_idf_branch=${1:-v3.1}
-#espruino_branch=${2:-master}
-espruino_branch=${2:-ESP32-V3.1}
+esp_idf_branch=${1:-v3.1.2}
+espruino_branch=${2:-master}
+#espruino_branch=${2:-ESP32-V3.1}
 checkout_mode=${3:-none}
 # Fresh cleans down to get new release
-#checkout_mode=$(3:-fresh}
+checkout_mode=${3:-fresh}
 echo using esp-idf branch $esp_idf_branch, espruino branch $espruino_branch, checkout mode $checkout_mode
 
 if [ ! -d "Espruino" ]; then
