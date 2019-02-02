@@ -25,19 +25,13 @@ fi
 cd Espruino
 source ./scripts/provision.sh ESP32
 cd ..
-# initialise the submodule folder
-# This will need to be tied to a release
-#git submodule update --init 
-
-#cd esp-idf
-#git fetch
-#git checkout $esp_idf_branch
 if [ "$checkout_mode" = "fresh" ]
 then
         echo "refreshing to new sdk"
 	rm -r esp-idf
-	git clone -b $esp_idf_branch --recursive https://github.com/espressif/esp-idf.git esp-idf
-	git submodule update --init --recursive
+	curl -L -o esp-idf-$esp_idf_branch.zip https://github.com/espressif/esp-idf/releases/download/$esp_idf_branch/esp-idf-$esp_idf_branch.zip
+ 	unzip -q esp-idf-$esp_idf_branch.zip -d .
+ 	mv esp-idf-$esp_idf_branch esp-idf
 fi
 
 echo `pwd`
@@ -51,23 +45,7 @@ make clean
 make
 #make -j 5
 # This is not the firmware - get rid of it!
-rm build/espruino-esp32.elf
 echo `pwd`
-cd ..
+rm build/espruino-esp32.elf
 make app.tgz
-cd ../Espruino
-
-# copy newly build libs and expand
-tar xfz ../../deploy/esp-idf.tgz
-tar xfz ../../deploy/app.tgz
-
-git fetch
-git checkout $espruino_branch
-git pull
-# reset the IDF_PATH
-source ./scripts/provision.sh ESP32
-make clean
-BOARD=ESP32 make
-ln -s app/build/bootloader/bootloader.bin
-ln -s app/build/partitions_espruino.bin
-cat targets/esp32/README_flash.txt
+cd ..
