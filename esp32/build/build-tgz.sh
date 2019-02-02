@@ -1,12 +1,15 @@
 #!/bin/bash
 # adjust paths to this folder versions
 export ESP_IDF_PATH=`pwd`/esp-idf
-export ESP_IDF_PATH=`pwd`/esp-idf
+export IDF_PATH=`pwd`/esp-idf
 export ESP_APP_TEMPLATE_PATH=`pwd`
 
 cd app
 make app.tgz
 cd ../Espruino
+
+rm -r  app
+rm -r esp-idf
 
 # copy newly build libs and expand
 tar xfz ../../deploy/esp-idf.tgz
