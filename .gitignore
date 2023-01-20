@@ -1,0 +1,8 @@
+esp32/build/Espruino
+*.d
+*.o
+*.a
+*.a.*
+*.mk
+nrf52/nRF5_SDK_*
+

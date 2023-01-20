@@ -10,7 +10,7 @@ Prerequisites
 ```
 sudo apt-get update
 sudo apt-get install -y \
-  build-essential git python python-pip curl
+  build-essential git python python-pip curl libncurses-dev gperf
 sudo pip install --upgrade pip
 sudo pip install pyserial
 ```
@@ -29,5 +29,5 @@ If you want to build using the latest esp-idf sources, then perhaps you want to 
 ```
 git clone --recursive https://github.com/espruino/EspruinoBuildTools.git
 cd EspruinoBuildTools/esp32/build
-source ./build-idf.sh
+source ./build-idf.sh v3.3.6 master fresh
 ```
