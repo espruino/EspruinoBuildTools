@@ -7,6 +7,8 @@ If we download the files direct from developer.arm.com builds often fail purely 
 * `gcc-arm-none-eabi-8-2018-q4-major-linux.tar.bz2` : `doc` folder removed
 * `arm-gnu-toolchain-13.2.rel1-x86_64-arm-none-eabi-stripped.tar.xz` : `share/doc`,`share/man` folders removed, symbols stripped from executables with `strip  bin/* arm-none-eabi/bin/* libexec/gcc/arm-none-eabi/13.2.1/{cc*,f*,lto1}`
 
+Toolchains for arm64 (ARMV8+) host (while building Espruino on Android phone)
+* `arm-gnu-toolchain-13.2.Rel1-aarch64-arm-none-eabi-stripped.tar.xz` : `share/doc`,`share/man` folders removed, symbols stripped from executables with `strip  bin/* arm-none-eabi/bin/* libexec/gcc/arm-none-eabi/13.2.1/{cc*,f*,lto1}`
 The architectures actually used are:
 
 * nRF51 (micro:bit 1) : v6-m/nofp
